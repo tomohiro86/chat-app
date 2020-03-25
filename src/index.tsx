@@ -6,6 +6,8 @@ import 'normalize.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './store';
 import 'moment/locale/ja';
 import moment from 'moment';
 import GlobalStyle from './GlobalStyle';
@@ -15,14 +17,13 @@ import * as serviceWorker from './serviceWorker';
 moment.locale('ja');
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <GlobalStyle />
-    <App />
-  </React.StrictMode>,
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Provider>,
   document.getElementById('root'),
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
