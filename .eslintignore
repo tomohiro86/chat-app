@@ -1,0 +1,4 @@
+node_modules
+**/*.min.js
+src/__stories__/.*\\.(ts|tsx|js)$
+src/serviceWorker.js
