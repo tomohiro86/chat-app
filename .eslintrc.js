@@ -7,7 +7,6 @@ module.exports = {
   },
   "extends": [
     "eslint:recommended",
-    "airbnb",
     "plugin:@typescript-eslint/recommended",
     "react-app",
     "plugin:prettier/recommended",
@@ -35,6 +34,7 @@ module.exports = {
     "import/resolver": {
       "node": {
         "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "moduleDirectory": ['node_modules', 'src/'],
       },
     },
   },
