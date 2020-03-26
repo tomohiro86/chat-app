@@ -10,6 +10,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 import 'moment/locale/ja';
 import moment from 'moment';
+import './i18n';
 import GlobalStyle from './GlobalStyle';
 import App from 'components/templates/App';
 import * as serviceWorker from './serviceWorker';
