@@ -11,7 +11,7 @@ import store from './store';
 import 'moment/locale/ja';
 import moment from 'moment';
 import GlobalStyle from './GlobalStyle';
-import App from './App';
+import App from 'components/templates/App';
 import * as serviceWorker from './serviceWorker';
 
 moment.locale('ja');
