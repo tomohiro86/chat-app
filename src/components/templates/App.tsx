@@ -8,14 +8,19 @@ import { Styled } from 'sc/templates/App';
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
+  const [isVisible, setVisible] = React.useState(false);
 
   React.useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
+        console.log(user);
         dispatch(setLogin());
       }
+      setVisible(true);
     });
   }, [dispatch]);
+
+  if (!isVisible) return null;
 
   return (
     <Router>

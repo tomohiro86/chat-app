@@ -1,5 +1,6 @@
 import Home from 'components/pages/Home';
 import Signin from 'components/pages/Signin';
+import Signup from 'components/pages/Signup';
 
 export interface RouteIF {
   pathname: string;
@@ -12,6 +13,7 @@ export interface RouteIF {
 export interface RoutesIF {
   home: RouteIF;
   signin: RouteIF;
+  signup: RouteIF;
   [key: string]: RouteIF;
 }
 
@@ -27,5 +29,11 @@ export const ROUTES: RoutesIF = {
     exact: true,
     isAuth: false,
     component: Signin,
+  },
+  signup: {
+    pathname: '/signup',
+    exact: true,
+    isAuth: false,
+    component: Signup,
   },
 };

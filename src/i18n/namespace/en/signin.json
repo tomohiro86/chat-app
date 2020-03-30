@@ -1,0 +1,17 @@
+{
+  "title": "Welcome back",
+  "form": {
+    "email": {
+      "placeholder": "Enter your email"
+    },
+    "password": {
+      "placeholder": "Enter your password"
+    },
+    "buttons": {
+      "submit": "Sign in"
+    },
+    "links": {
+      "signup": "Register an account"
+    }
+  }
+}
