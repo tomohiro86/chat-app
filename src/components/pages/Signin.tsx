@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import firebase from 'firebaseConfig';
 import { useDispatch } from 'react-redux';
+import { setMe } from 'module/me/action';
 import { setLogin } from 'module/login/action';
 import { useHistory } from 'react-router-dom';
 import { ROUTES } from 'routes';
@@ -58,7 +59,9 @@ const Signin: React.FC = () => {
       firebase
         .auth()
         .signInWithEmailAndPassword(values.email, values.password)
-        .then(() => {
+        .then((createdUser: firebase.auth.UserCredential) => {
+          if (!createdUser.user) return false;
+          dispatch(setMe(createdUser.user));
           dispatch(setLogin());
           history.push(ROUTES.home.pathname);
         })

@@ -1,6 +1,6 @@
 {
-  "signin": "Login",
-  "signout": "Logout",
+  "signin": "Sign in",
+  "signout": "Sign out",
   "action": {
     "add": "Add",
     "cancel": "Cancel",

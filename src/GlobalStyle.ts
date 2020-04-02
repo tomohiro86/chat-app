@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Hiragino Kaku Gothic ProN W3", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
     color: #231815;
     background-color: #f8f9fa;
-    line-height: 1.8;
+    line-height: 1.4;
     letter-spacing: 0.02rem;
     word-break: break-word;
     box-sizing: border-box;
