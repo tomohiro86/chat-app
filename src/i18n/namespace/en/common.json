@@ -1,0 +1,26 @@
+{
+  "signin": "Login",
+  "signout": "Logout",
+  "action": {
+    "add": "Add",
+    "cancel": "Cancel",
+    "done": "Done",
+    "close": "Close",
+    "next": "Next",
+    "decide": "Save",
+    "edit": "change",
+    "confirm": "Confirm",
+    "copy": "Copy"
+  },
+  "form": {
+    "isOptional": "Optional"
+  },
+  "error": {
+    "error": "An Error Occured",
+    "signin": "An error occurred when logging out.",
+    "network": {
+      "title": "Network error",
+      "description": "Having trouble while connecting to network."
+    }
+  }
+}

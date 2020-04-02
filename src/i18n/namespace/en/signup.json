@@ -1,0 +1,27 @@
+{
+  "title": "Welcome",
+  "form": {
+    "username": {
+      "placeholder": "Enter your user name"
+    },
+    "email": {
+      "placeholder": "Enter your email"
+    },
+    "password": {
+      "placeholder": "Enter your password"
+    },
+    "passwordConfirmation": {
+      "placeholder": "Enter password confirmation"
+    },
+    "buttons": {
+      "submit": "Sign up"
+    },
+    "links": {
+      "signin": "Already registered?"
+    }
+  },
+  "errors": {
+    "emptyAll": "Fill in all fields",
+    "password": "Password is invalid"
+  }
+}

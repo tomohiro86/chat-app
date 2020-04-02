@@ -1,0 +1,27 @@
+{
+  "title": "ようこそ",
+  "form": {
+    "username": {
+      "placeholder": "ユーザー名を入力してください"
+    },
+    "email": {
+      "placeholder": "メールアドレスを入力してください"
+    },
+    "password": {
+      "placeholder": "パスワードを入力してください"
+    },
+    "passwordConfirmation": {
+      "placeholder": "パスワードの確認を入力してください"
+    },
+    "buttons": {
+      "submit": "サインアップ"
+    },
+    "links": {
+      "signin": "すでにアカウントをお持ちですか？"
+    }
+  },
+  "errors": {
+    "emptyAll": "未記入の項目があります",
+    "password": "パスワードが無効です"
+  }
+}

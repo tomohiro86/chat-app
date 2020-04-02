@@ -1,0 +1,26 @@
+{
+  "signin": "ログイン",
+  "signout": "ログアウト",
+  "action": {
+    "add": "追加する",
+    "cancel": "キャンセル",
+    "done": "完了",
+    "close": "閉じる",
+    "next": "次へ",
+    "decide": "決定",
+    "edit": "変更する",
+    "confirm": "確定する",
+    "copy": "コピー"
+  },
+  "form": {
+    "isOptional": "任意"
+  },
+  "error": {
+    "error": "エラー",
+    "signin": "ログアウト時にエラーが発生しました",
+    "network": {
+      "title": "ネットワークエラー",
+      "description": "通信でエラーが発生しました。"
+    }
+  }
+}
