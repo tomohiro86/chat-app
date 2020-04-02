@@ -1,6 +1,6 @@
 {
-  "signin": "ログイン",
-  "signout": "ログアウト",
+  "signin": "サインイン",
+  "signout": "サインアウト",
   "action": {
     "add": "追加する",
     "cancel": "キャンセル",

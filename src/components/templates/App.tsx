@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import firebase from 'firebaseConfig';
 import { useDispatch } from 'react-redux';
 import { setLogin } from 'module/login/action';
+import { setMe } from 'module/me/action';
 import { ROUTES } from 'routes';
 import { Styled } from 'sc/templates/App';
 
@@ -13,6 +14,7 @@ const App: React.FC = () => {
   React.useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
+        dispatch(setMe(user));
         dispatch(setLogin());
       }
       setVisible(true);

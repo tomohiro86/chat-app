@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import firebase from 'firebaseConfig';
 import { useDispatch } from 'react-redux';
 import { setLogin } from 'module/login/action';
+import { setMe } from 'module/me/action';
 import { useHistory } from 'react-router-dom';
 import { ROUTES } from 'routes';
 import { Styled } from 'sc/pages/Signup';
@@ -78,7 +79,7 @@ const Signup: React.FC = () => {
         .createUserWithEmailAndPassword(values.email, values.password)
         .then((createdUser: firebase.auth.UserCredential) => {
           if (!createdUser.user) return false;
-          console.log(createdUser);
+          dispatch(setMe(createdUser.user));
           createdUser.user
             .updateProfile({
               displayName: values.username,
