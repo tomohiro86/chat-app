@@ -33,7 +33,7 @@ const Signin: React.FC = () => {
     let error;
 
     if (isFormEmpty(values)) {
-      error = { message: 'Fill in all fields' };
+      error = { message: t('signin.errors.emptyAll') };
       setError(newErrors.concat(error));
       return false;
     } else {

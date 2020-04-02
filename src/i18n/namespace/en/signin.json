@@ -13,5 +13,8 @@
     "links": {
       "signup": "Register an account"
     }
+  },
+  "errors": {
+    "emptyAll": "Fill in all fields"
   }
 }

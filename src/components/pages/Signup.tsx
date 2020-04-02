@@ -31,16 +31,15 @@ const Signup: React.FC = () => {
   const [errors, setError] = React.useState<ErrorIF[]>([]);
 
   const isFormValid = () => {
-    console.log(errors);
     const newErrors: ErrorIF[] = [];
     let error;
 
     if (isFormEmpty(values)) {
-      error = { message: 'Fill in all fields' };
+      error = { message: t('signin.errors.emptyAll') };
       setError(newErrors.concat(error));
       return false;
     } else if (!isPasswordValid(values.password, values.passwordConfirmation)) {
-      error = { message: 'Password is invalid' };
+      error = { message: t('signup.error.password') };
       setError(newErrors.concat(error));
       return false;
     } else {

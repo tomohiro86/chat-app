@@ -13,7 +13,6 @@ const App: React.FC = () => {
   React.useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        console.log(user);
         dispatch(setLogin());
       }
       setVisible(true);

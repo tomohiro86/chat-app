@@ -19,5 +19,9 @@
     "links": {
       "signin": "Already registered?"
     }
+  },
+  "errors": {
+    "emptyAll": "Fill in all fields",
+    "password": "Password is invalid"
   }
 }
