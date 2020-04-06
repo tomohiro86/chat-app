@@ -12,7 +12,10 @@ const Header = styled.div`
   height: 64px;
 `;
 
-const StyleUserInfo = styled(UserInfo)``;
+const StyleUserInfo = styled(UserInfo)`
+  padding: 10px 20px;
+  border-bottom: 1px solid rgb(82, 38, 83);
+`;
 
 export const Styled = {
   Wrapper,

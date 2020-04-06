@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { theme } from 'Theme';
+import { Theme } from 'Theme';
 
 interface Props {
   theme?: string | undefined;
@@ -11,7 +11,7 @@ const themeStyle = (kind: string | undefined) => {
     return `
       color: #ffffff;
       font-weight: bold;
-      background-color: ${theme.primaryColor};
+      background-color: ${Theme.primaryColor};
       border: 1px solid #1674cb;
     `;
   }

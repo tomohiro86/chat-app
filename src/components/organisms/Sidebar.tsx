@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { State } from 'store';
 import { useHistory } from 'react-router-dom';
 import { ROUTES } from 'routes';
+import { Mode } from 'Theme';
 import { Styled } from 'sc/organisms/Sidebar';
 
 const Sidebar: React.FC = (props) => {
@@ -22,7 +23,7 @@ const Sidebar: React.FC = (props) => {
   return (
     <Styled.Wrapper {...rest}>
       <Styled.Header>
-        <Styled.StyleUserInfo currentUser={currentUser} onSignout={onSignout} />
+        <Styled.StyleUserInfo name={currentUser.displayName} mode={Mode[0]} onSignout={onSignout} />
       </Styled.Header>
     </Styled.Wrapper>
   );

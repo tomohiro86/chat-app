@@ -3,22 +3,23 @@ import { useTranslation } from 'react-i18next';
 import { Styled } from 'sc/molecules/UserInfo';
 
 interface Props {
-  currentUser: firebase.User;
+  name: string | null;
+  mode: string;
   onSignout: () => void;
 }
 
-const UserPanel: React.FC<Props> = (props) => {
+const UserInfo: React.FC<Props> = (props) => {
   const { t } = useTranslation();
-  const { currentUser, onSignout, ...rest } = props;
+  const { name, mode, onSignout, ...rest } = props;
   return (
     <Styled.Wrapper {...rest}>
-      <Styled.UserName>{currentUser.displayName}</Styled.UserName>
+      {name && <Styled.UserName mode={mode}>{name}</Styled.UserName>}
       <Styled.Signout onClick={onSignout}>
-        <Styled.StyleIconSignout />
-        <Styled.SignoutLabel>{t('common.signout')}</Styled.SignoutLabel>
+        <Styled.StyleIconSignout mode={mode} />
+        <Styled.SignoutLabel mode={mode}>{t('common.signout')}</Styled.SignoutLabel>
       </Styled.Signout>
     </Styled.Wrapper>
   );
 };
 
-export default UserPanel;
+export default UserInfo;

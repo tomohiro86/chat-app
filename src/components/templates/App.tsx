@@ -43,6 +43,7 @@ const App: React.FC = () => {
             );
           })}
         </Switch>
+        <Styled.StyleModal />
       </Styled.Wrapper>
     </Router>
   );
