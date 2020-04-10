@@ -1,5 +1,8 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { Mode } from 'Theme';
+import IconSharp from 'components/svg/IconSharp';
+import IconLock from 'components/svg/IconLock';
 import Button from 'components/atoms/Button';
 
 interface ModeIF {
@@ -65,9 +68,42 @@ const PlusBtn = styled(Button)`
   }
 `;
 
+const Content = styled.div``;
+
+const List = styled.ul``;
+
+const ListItem = styled.li``;
+
+const ChannelLink = styled(Link)`
+  padding: 0 16px;
+`;
+
+const StyleIconSharp = styled(IconSharp)`
+  width: 8px;
+  fill: #ffffff;
+`;
+
+const StyleIconLock = styled(IconLock)`
+  width: 8px;
+  fill: #ffffff;
+`;
+
+const ChannelLabel = styled.span`
+  margin-left: 6px;
+  color: #ffffff;
+  font-size: 1.4rem;
+`;
+
 export const Styled = {
   Wrapper,
   Header,
   Title,
   PlusBtn,
+  Content,
+  List,
+  ListItem,
+  ChannelLink,
+  StyleIconSharp,
+  StyleIconLock,
+  ChannelLabel,
 };
