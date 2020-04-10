@@ -20,6 +20,10 @@ const Sidebar: React.FC = (props) => {
       .then(() => history.push(ROUTES.signin.pathname));
   };
 
+  const onCreateChannel = () => {
+    console.log('check');
+  };
+
   return (
     <Styled.Wrapper mode={Mode[0]} {...rest}>
       <Styled.Header>
@@ -29,6 +33,9 @@ const Sidebar: React.FC = (props) => {
           onSignout={onSignout}
         />
       </Styled.Header>
+      <Styled.Nav>
+        <Styled.StyleChannelPanel mode={Mode[0]} onCreateChannel={onCreateChannel} />
+      </Styled.Nav>
     </Styled.Wrapper>
   );
 };

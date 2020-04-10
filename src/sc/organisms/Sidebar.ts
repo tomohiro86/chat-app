@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Mode } from 'Theme';
 import UserInfo from 'components/molecules/UserInfo';
+import ChannelPanel from 'components/molecules/ChannelPanel';
 
 interface ModeIF {
   mode: string;
@@ -37,8 +38,14 @@ const StyleUserInfo = styled(UserInfo)`
   border-bottom: 1px solid rgb(82, 38, 83);
 `;
 
+const Nav = styled.nav``;
+
+const StyleChannelPanel = styled(ChannelPanel)``;
+
 export const Styled = {
   Wrapper,
   Header,
   StyleUserInfo,
+  Nav,
+  StyleChannelPanel,
 };
