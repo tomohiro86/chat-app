@@ -25,6 +25,16 @@ const ModalCreateChannel: React.FC<Prps> = (props) => {
           errorMessage=""
           onChange={onChange}
         />
+        <Styled.StyleFieldInput
+          type="text"
+          name="description"
+          value={''}
+          label="説明"
+          placeholder=""
+          errorMessage=""
+          isOptional={true}
+          onChange={onChange}
+        />
       </Styled.Content>
     </Styled.Wrapper>
   );

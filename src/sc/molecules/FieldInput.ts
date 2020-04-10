@@ -18,7 +18,7 @@ const FieldTxt = styled.p`
 
 const StyleInput = styled(Input)`
   width: 100%;
-  margin-top: 12px;
+  margin-top: 6px;
   padding: 10px 12px 9px;
   background: ${(props: StyleInputIF) => (props.isError ? 'rgba(248, 76, 74, 0.18)' : '#ffffff')};
   border: ${(props: StyleInputIF) => (props.isError ? '1px solid #F84C4A' : '1px solid #cccccc')};

@@ -6,9 +6,16 @@ const Wrapper = styled.div``;
 
 const StyleModalHeader = styled(ModalHeader)``;
 
-const Content = styled.div``;
+const Content = styled.div`
+  padding: 20px;
+`;
 
-const StyleFieldInput = styled(FieldInput)``;
+const StyleFieldInput = styled(FieldInput)`
+  margin-top: 16px;
+  &:first-child {
+    margin-top: 0;
+  }
+`;
 
 export const Styled = {
   Wrapper,
