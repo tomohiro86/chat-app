@@ -21,9 +21,13 @@ const Sidebar: React.FC = (props) => {
   };
 
   return (
-    <Styled.Wrapper {...rest}>
+    <Styled.Wrapper mode={Mode[0]} {...rest}>
       <Styled.Header>
-        <Styled.StyleUserInfo name={currentUser.displayName} mode={Mode[0]} onSignout={onSignout} />
+        <Styled.StyleUserInfo
+          name={currentUser.displayName ? currentUser.displayName : ''}
+          mode={Mode[0]}
+          onSignout={onSignout}
+        />
       </Styled.Header>
     </Styled.Wrapper>
   );

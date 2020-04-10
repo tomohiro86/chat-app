@@ -16,32 +16,33 @@ const App: React.FC = () => {
       if (user) {
         dispatch(setMe(user));
         dispatch(setLogin());
+        setVisible(true);
+      } else {
+        setVisible(true);
       }
-      setVisible(true);
     });
   }, [dispatch]);
-
-  if (!isVisible) return null;
 
   return (
     <Router>
       <Styled.Wrapper>
         <Switch>
-          {Object.keys(ROUTES).map((key) => {
-            const route = ROUTES[key];
-            return (
-              <Route
-                key={key}
-                exact={route.exact}
-                path={route.pathname}
-                render={() => (
-                  <Styled.StyleAuth isAuth={route.isAuth}>
-                    <route.component />
-                  </Styled.StyleAuth>
-                )}
-              />
-            );
-          })}
+          {isVisible &&
+            Object.keys(ROUTES).map((key) => {
+              const route = ROUTES[key];
+              return (
+                <Route
+                  key={key}
+                  exact={route.exact}
+                  path={route.pathname}
+                  render={() => (
+                    <Styled.StyleAuth isAuth={route.isAuth}>
+                      <route.component />
+                    </Styled.StyleAuth>
+                  )}
+                />
+              );
+            })}
         </Switch>
         <Styled.StyleModal />
       </Styled.Wrapper>

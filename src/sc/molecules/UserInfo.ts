@@ -10,8 +10,8 @@ const modeStyle = (mode: string) => {
   switch (mode) {
     case Mode[0]:
       return `
-        color: #000000;
-        fill: #000000;
+        color: #ffffff;
+        fill: #ffffff;
       `;
     case Mode[1]:
       return `

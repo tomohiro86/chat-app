@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Styled } from 'sc/molecules/UserInfo';
 
 interface Props {
-  name: string | null;
+  name: string;
   mode: string;
   onSignout: () => void;
 }

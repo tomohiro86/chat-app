@@ -1,8 +1,28 @@
 import styled from 'styled-components';
+import { Mode } from 'Theme';
 import UserInfo from 'components/molecules/UserInfo';
 
+interface ModeIF {
+  mode: string;
+}
+
+const modeStyle = (mode: string) => {
+  switch (mode) {
+    case Mode[0]:
+      return `
+        background-color: #3f0f40;
+      `;
+    case Mode[1]:
+      return `
+        background-color: #000000;
+      `;
+    default:
+      break;
+  }
+};
+
 const Wrapper = styled.div`
-  background-color: #3f0f40;
+  ${(props: ModeIF) => modeStyle(props.mode)};
 `;
 
 const Header = styled.div`
