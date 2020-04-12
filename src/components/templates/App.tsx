@@ -45,15 +45,21 @@ const App: React.FC = () => {
                   path={route.pathname}
                   render={() => (
                     <Styled.StyleAuth isAuth={route.isAuth}>
-                      <route.component />
+                      {route.pathname === ROUTES.signin.pathname || route.pathname === ROUTES.signup.pathname ? (
+                        <route.component />
+                      ) : (
+                        <Styled.Main>
+                          <route.component />
+                        </Styled.Main>
+                      )}
                     </Styled.StyleAuth>
                   )}
                 />
               );
             })}
         </Switch>
-        <Styled.StyleModal />
       </Styled.Wrapper>
+      {isLogin && currentUser && <Styled.StyleModal />}
     </Router>
   );
 };
