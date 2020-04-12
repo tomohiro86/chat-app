@@ -22,7 +22,7 @@ const ChannelPanel: React.FC<Props> = (props) => {
           {channels.map((channel: ChannelIF, i: number) => {
             return (
               <Styled.ListItem key={i}>
-                <Styled.ChannelLink to={`/${channel.id}`}>
+                <Styled.ChannelLink to={`/room/${channel.id}`}>
                   {channel.is_public ? <Styled.StyleIconSharp /> : <Styled.StyleIconLock />}
                   <Styled.ChannelLabel>{channel.name}</Styled.ChannelLabel>
                 </Styled.ChannelLink>

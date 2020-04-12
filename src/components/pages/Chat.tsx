@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Home: React.FC = () => {
-  return <Wrapper>Home</Wrapper>;
+const Chat: React.FC = () => {
+  return <Wrapper>Chat</Wrapper>;
 };
 
 const Wrapper = styled.div``;
 
-export default Home;
+export default Chat;

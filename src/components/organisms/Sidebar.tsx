@@ -5,11 +5,15 @@ import { State } from 'store';
 import { useHistory } from 'react-router-dom';
 import { ROUTES } from 'routes';
 import { Mode } from 'Theme';
+import { useDispatch } from 'react-redux';
+import { resetMe } from 'module/me/action';
+import { resetLogin } from 'module/login/action';
 import { ChannelIF } from 'utils/interface';
 import { Styled } from 'sc/organisms/Sidebar';
 
 const Sidebar: React.FC = (props) => {
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const { ...rest } = props;
   const [isVisible, setVisible] = React.useState(false);
@@ -45,7 +49,12 @@ const Sidebar: React.FC = (props) => {
     firebase
       .auth()
       .signOut()
-      .then(() => history.push(ROUTES.signin.pathname));
+      .then(() => {
+        dispatch(resetMe());
+        dispatch(resetLogin());
+        history.push(ROUTES.signin.pathname);
+      })
+      .catch((error) => console.log(error));
   };
 
   const onCreateChannel = () => {

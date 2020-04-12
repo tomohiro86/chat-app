@@ -16,7 +16,7 @@ const Auth: React.FC<Props> = (props) => {
   const history = useHistory();
 
   React.useEffect(() => {
-    if (!isLogin && isAuth) {
+    if (!isLogin) {
       history.push(ROUTES.signin.pathname);
     }
   }, [history, isAuth, isLogin]);
