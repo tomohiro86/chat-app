@@ -7,6 +7,7 @@ import { ROUTES } from 'routes';
 import { Mode } from 'Theme';
 import { useDispatch } from 'react-redux';
 import { resetMe } from 'module/me/action';
+import { showModal } from 'module/modal/action';
 import { resetLogin } from 'module/login/action';
 import { ChannelIF } from 'utils/interface';
 import { Styled } from 'sc/organisms/Sidebar';
@@ -20,6 +21,7 @@ const Sidebar: React.FC = (props) => {
   const [channels, setChannels] = React.useState<ChannelIF[]>([]);
 
   const currentUser = useSelector((state: State) => state.me.payload) as firebase.User;
+  const modalNum = useSelector((state: State) => state.modal.modals.length);
   const channelsRef = db.collection('channels');
 
   React.useEffect(() => {
@@ -61,6 +63,12 @@ const Sidebar: React.FC = (props) => {
     console.log('check');
   };
 
+  const onShowModal = () => {
+    dispatch(
+      showModal(<Styled.StyleModalCreateChannel onCreateChannel={onCreateChannel} modalNum={modalNum} />, 'dark'),
+    );
+  };
+
   if (!isVisible) return null;
 
   return (
@@ -73,7 +81,7 @@ const Sidebar: React.FC = (props) => {
         />
       </Styled.Header>
       <Styled.Nav>
-        <Styled.StyleChannelPanel mode={Mode[0]} channels={channels} onCreateChannel={onCreateChannel} />
+        <Styled.StyleChannelPanel mode={Mode[0]} channels={channels} onShowModal={onShowModal} />
       </Styled.Nav>
     </Styled.Wrapper>
   );

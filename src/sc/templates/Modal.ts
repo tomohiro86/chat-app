@@ -13,7 +13,7 @@ const themeStyle = (theme: string) => {
   switch (theme) {
     case 'dark':
       return `
-        background-color: #33364e;
+        background-color: #000000;
         opacity: 0.4;
       `;
     default:

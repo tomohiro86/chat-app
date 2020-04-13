@@ -5,17 +5,17 @@ import { Styled } from 'sc/molecules/ChannelPanel';
 interface Props {
   mode: string;
   channels: ChannelIF[];
-  onCreateChannel: () => void;
+  onShowModal: () => void;
 }
 
 const ChannelPanel: React.FC<Props> = (props) => {
-  const { mode, channels, onCreateChannel, ...rest } = props;
+  const { mode, channels, onShowModal, ...rest } = props;
 
   return (
     <Styled.Wrapper {...rest}>
       <Styled.Header>
         <Styled.Title mode={mode}>チャンネル</Styled.Title>
-        <Styled.PlusBtn type="button" label={''} onClick={onCreateChannel} />
+        <Styled.PlusBtn type="button" label={''} onClick={onShowModal} />
       </Styled.Header>
       <Styled.Content>
         <Styled.List>

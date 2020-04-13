@@ -2,9 +2,14 @@ import styled from 'styled-components';
 import { Mode } from 'Theme';
 import UserInfo from 'components/molecules/UserInfo';
 import ChannelPanel from 'components/molecules/ChannelPanel';
+import ModalCreateChannel from 'components/organisms/ModalCreateChannel';
 
 interface ModeIF {
   mode: string;
+}
+
+interface ModalIF {
+  modalNum: number;
 }
 
 const modeStyle = (mode: string) => {
@@ -42,10 +47,15 @@ const Nav = styled.nav``;
 
 const StyleChannelPanel = styled(ChannelPanel)``;
 
+const StyleModalCreateChannel = styled(ModalCreateChannel)`
+  z-index: ${(props: ModalIF) => `${props.modalNum + 1}`};
+`;
+
 export const Styled = {
   Wrapper,
   Header,
   StyleUserInfo,
   Nav,
   StyleChannelPanel,
+  StyleModalCreateChannel,
 };
