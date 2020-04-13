@@ -59,14 +59,8 @@ const Sidebar: React.FC = (props) => {
       .catch((error) => console.log(error));
   };
 
-  const onCreateChannel = () => {
-    console.log('check');
-  };
-
   const onShowModal = () => {
-    dispatch(
-      showModal(<Styled.StyleModalCreateChannel onCreateChannel={onCreateChannel} modalNum={modalNum} />, 'dark'),
-    );
+    dispatch(showModal(<Styled.StyleModalCreateChannel modalNum={modalNum} />, 'dark'));
   };
 
   if (!isVisible) return null;
