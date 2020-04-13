@@ -72,9 +72,15 @@ const Content = styled.div``;
 
 const List = styled.ul``;
 
-const ListItem = styled.li``;
+const ListItem = styled.li`
+  display: flex;
+  align-items: center;
+  height: 32px;
+`;
 
 const ChannelLink = styled(Link)`
+  display: block;
+  width: 100%;
   padding: 0 16px;
 `;
 

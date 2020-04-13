@@ -6,7 +6,7 @@ const Header = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 11px 20px 10px;
+  padding: 21px 20px 20px;
   box-sizing: border-box;
 `;
 
