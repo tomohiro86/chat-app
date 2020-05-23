@@ -27,7 +27,7 @@ export const ROUTES: RoutesIF = {
     component: Home,
   },
   chat: {
-    pathname: '/room/:id',
+    pathname: '/room/:roomId',
     exact: true,
     isAuth: true,
     component: Chat,

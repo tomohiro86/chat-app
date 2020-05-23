@@ -1,10 +1,12 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useHistory, Redirect } from 'react-router-dom';
 import firebase from 'firebaseConfig';
 import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { State } from 'store';
 import { setLogin } from 'module/login/action';
 import { setMe } from 'module/me/action';
-import { useHistory } from 'react-router-dom';
 import { ROUTES } from 'routes';
 import { Styled } from 'sc/pages/Signup';
 
@@ -28,6 +30,7 @@ const Signup: React.FC = () => {
   const { t } = useTranslation();
   const history = useHistory();
 
+  const isLogin = useSelector((state: State) => state.login.isLogin);
   const [values, setValues] = React.useState<ValuesIF>(initialValues);
   const [errors, setError] = React.useState<ErrorIF[]>([]);
 
@@ -100,7 +103,7 @@ const Signup: React.FC = () => {
     }
   };
 
-  return (
+  return !isLogin ? (
     <Styled.Wrapper>
       <Styled.Container>
         <Styled.Title>{t('signup.title')}</Styled.Title>
@@ -164,6 +167,8 @@ const Signup: React.FC = () => {
         </Styled.Content>
       </Styled.Container>
     </Styled.Wrapper>
+  ) : (
+    <Redirect to={ROUTES.home.pathname} />
   );
 };
 
