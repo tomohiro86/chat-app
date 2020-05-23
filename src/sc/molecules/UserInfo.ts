@@ -1,20 +1,39 @@
 import styled from 'styled-components';
+import { Mode } from 'Theme';
 import IconSignout from 'components/svg/IconSignout';
+
+interface ModeIF {
+  mode: string;
+}
+
+const modeStyle = (mode: string) => {
+  switch (mode) {
+    case Mode[0]:
+      return `
+        color: #ffffff;
+        fill: #ffffff;
+      `;
+    case Mode[1]:
+      return `
+        color: #ffffff;
+        fill: #ffffff;
+      `;
+    default:
+      break;
+  }
+};
 
 const Wrapper = styled.div`
   width: 100%;
-  padding: 10px 20px;
-  background-color: #3f0f40;
-  border-bottom: 1px solid rgb(82, 38, 83);
 `;
 
 const UserName = styled.p`
-  color: #ffffff;
   font-size: 1.3rem;
   font-weight: 600;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  ${(props: ModeIF) => modeStyle(props.mode)};
 `;
 
 const Signout = styled.div`
@@ -26,17 +45,17 @@ const Signout = styled.div`
 
 const StyleIconSignout = styled(IconSignout)`
   width: 14px;
-  fill: #ffffff;
+  ${(props: ModeIF) => modeStyle(props.mode)};
 `;
 
 const SignoutLabel = styled.p`
   margin-left: 4px;
-  color: #ffffff;
   font-size: 1.1rem;
   font-weight: 400;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  ${(props: ModeIF) => modeStyle(props.mode)};
 `;
 
 export const Styled = {

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { theme } from 'Theme';
+import { Theme } from 'Theme';
 import Button from 'components/atoms/Button';
 import ErrorMessage from 'components/atoms/ErrorMessage';
 import FieldInput from 'components/molecules/FieldInput';
@@ -69,7 +69,7 @@ const LinkArea = styled.div`
 `;
 
 const StyleLink = styled(Link)`
-  color: ${theme.primaryColor};
+  color: ${Theme.primaryColor};
 `;
 
 export const Styled = {
