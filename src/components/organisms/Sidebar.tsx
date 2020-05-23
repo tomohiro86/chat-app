@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux';
 import { resetMe } from 'module/me/action';
 import { showModal } from 'module/modal/action';
 import { resetLogin } from 'module/login/action';
+import { addAllChannel } from 'module/channels/action';
 import { ChannelIF } from 'utils/interface';
 import { Styled } from 'sc/organisms/Sidebar';
 
@@ -18,9 +19,10 @@ const Sidebar: React.FC = (props) => {
 
   const { ...rest } = props;
   const [isVisible, setVisible] = React.useState(false);
-  const [channels, setChannels] = React.useState<ChannelIF[]>([]);
+  const [activeChannelId, setActiveChannelId] = React.useState<string>('');
 
   const currentUser = useSelector((state: State) => state.me.payload) as firebase.User;
+  const channels = useSelector((state: State) => state.channels.payload);
   const modalNum = useSelector((state: State) => state.modal.modals.length);
   const channelsRef = db.collection('channels');
 
@@ -37,15 +39,20 @@ const Sidebar: React.FC = (props) => {
               name: data.name,
               description: data.description,
               is_public: data.is_public,
+              created_at: data.created_at,
+              updated_at: data.updated_at,
             };
             channels = [...channels, channel];
           });
-          setChannels(channels);
+          if (channels.length > 0) {
+            setActiveChannelId(channels[0].id);
+          }
+          dispatch(addAllChannel(channels));
           setVisible(true);
         })
         .catch((error) => console.log(error));
     }
-  }, [isVisible, channelsRef, channels]);
+  }, [isVisible, channelsRef, dispatch]);
 
   const onSignout = () => {
     firebase
@@ -75,7 +82,13 @@ const Sidebar: React.FC = (props) => {
         />
       </Styled.Header>
       <Styled.Nav>
-        <Styled.StyleChannelPanel mode={Mode[0]} channels={channels} onShowModal={onShowModal} />
+        <Styled.StyleChannelPanel
+          mode={Mode[0]}
+          activeChannelId={activeChannelId}
+          channels={channels}
+          onShowModal={onShowModal}
+          onChangeChannel={(channelId: string) => setActiveChannelId(channelId)}
+        />
       </Styled.Nav>
     </Styled.Wrapper>
   );

@@ -4,12 +4,14 @@ import { Styled } from 'sc/molecules/ChannelPanel';
 
 interface Props {
   mode: string;
+  activeChannelId: string;
   channels: ChannelIF[];
   onShowModal: () => void;
+  onChangeChannel: (channelId: string) => void;
 }
 
 const ChannelPanel: React.FC<Props> = (props) => {
-  const { mode, channels, onShowModal, ...rest } = props;
+  const { mode, channels, activeChannelId, onShowModal, onChangeChannel, ...rest } = props;
 
   return (
     <Styled.Wrapper {...rest}>
@@ -22,7 +24,11 @@ const ChannelPanel: React.FC<Props> = (props) => {
           {channels.map((channel: ChannelIF, i: number) => {
             return (
               <Styled.ListItem key={i}>
-                <Styled.ChannelLink to={`/room/${channel.id}`}>
+                <Styled.ChannelLink
+                  isActive={channel.id === activeChannelId}
+                  to={`/room/${channel.id}`}
+                  onClick={() => onChangeChannel(channel.id)}
+                >
                   {channel.is_public ? <Styled.StyleIconSharp /> : <Styled.StyleIconLock />}
                   <Styled.ChannelLabel>{channel.name}</Styled.ChannelLabel>
                 </Styled.ChannelLink>

@@ -9,6 +9,10 @@ interface ModeIF {
   mode: string;
 }
 
+interface ChannelLinkIF {
+  isActive: boolean;
+}
+
 const modeStyle = (mode: string) => {
   switch (mode) {
     case Mode[0]:
@@ -76,12 +80,18 @@ const ListItem = styled.li`
   display: flex;
   align-items: center;
   height: 32px;
+  line-height: 2;
 `;
 
 const ChannelLink = styled(Link)`
   display: block;
   width: 100%;
+  height: 100%;
   padding: 0 16px;
+  background-color: ${(props: ChannelLinkIF) => (props.isActive ? '#1164A3' : 'inherit')};
+  &:hover {
+    background-color: ${(props: ChannelLinkIF) => (props.isActive ? '#1164A3' : 'rgba(0, 0, 0, 0.2)')};
+  }
 `;
 
 const StyleIconSharp = styled(IconSharp)`

@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { db } from 'firebaseConfig';
+import firebase, { db } from 'firebaseConfig';
 import { useDispatch } from 'react-redux';
 import { hideModal } from 'module/modal/action';
+import { addChannel } from 'module/channels/action';
 import { Styled } from 'sc/organisms/ModalCreateChannel';
 
 interface ValueIF {
@@ -34,9 +35,19 @@ const ModalCreateChannel: React.FC = (props) => {
         name: value.name,
         description: value.description,
         is_public: true,
+        created_at: firebase.firestore.FieldValue.serverTimestamp(),
+        updated_at: firebase.firestore.FieldValue.serverTimestamp(),
       })
       .then((res: firebase.firestore.DocumentReference<firebase.firestore.DocumentData>) => {
-        console.log(res.id);
+        const channel = {
+          id: res.id,
+          name: value.name,
+          description: value.description,
+          is_public: true,
+          created_at: value.created_at,
+          updated_at: value.updated_at,
+        };
+        dispatch(addChannel(channel));
         setValue(initialValue);
         dispatch(hideModal());
       })
