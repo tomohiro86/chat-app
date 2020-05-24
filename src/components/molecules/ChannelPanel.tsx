@@ -25,7 +25,7 @@ const ChannelPanel: React.FC<Props> = (props) => {
             return (
               <Styled.ListItem key={i}>
                 <Styled.ChannelLink
-                  isActive={channel.id === activeChannelId}
+                  active={channel.id === activeChannelId ? 0 : 1}
                   to={`/room/${channel.id}`}
                   onClick={() => onChangeChannel(channel.id)}
                 >
