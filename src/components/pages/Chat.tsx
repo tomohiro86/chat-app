@@ -1,10 +1,17 @@
 import React from 'react';
-import styled from 'styled-components';
+import { Styled } from 'sc/pages/Chat';
 
 const Chat: React.FC = () => {
-  return <Wrapper>Chat</Wrapper>;
+  return (
+    <Styled.Wrapper>
+      <Styled.ChatFrame>
+        <Styled.MessageArea></Styled.MessageArea>
+      </Styled.ChatFrame>
+      <Styled.Footer>
+        <Styled.StyleChatForm />
+      </Styled.Footer>
+    </Styled.Wrapper>
+  );
 };
-
-const Wrapper = styled.div``;
 
 export default Chat;
