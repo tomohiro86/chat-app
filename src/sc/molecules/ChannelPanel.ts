@@ -10,7 +10,7 @@ interface ModeIF {
 }
 
 interface ChannelLinkIF {
-  isActive: boolean;
+  active: 0 | 1;
 }
 
 const modeStyle = (mode: string) => {
@@ -88,9 +88,9 @@ const ChannelLink = styled(Link)`
   width: 100%;
   height: 100%;
   padding: 0 16px;
-  background-color: ${(props: ChannelLinkIF) => (props.isActive ? '#1164A3' : 'inherit')};
+  background-color: ${(props: ChannelLinkIF) => (props.active === 0 ? '#1164A3' : 'inherit')};
   &:hover {
-    background-color: ${(props: ChannelLinkIF) => (props.isActive ? '#1164A3' : 'rgba(0, 0, 0, 0.2)')};
+    background-color: ${(props: ChannelLinkIF) => (props.active === 0 ? '#1164A3' : 'rgba(0, 0, 0, 0.2)')};
   }
 `;
 
